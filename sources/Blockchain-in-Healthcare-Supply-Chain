@@ -1,0 +1,16 @@
+[package]
+name = "BlockchaininHealthcareSupplyChain"
+version = "1.0.0"
+authors = []
+
+[addresses]
+Healthcare =
+0x66f01ad3d364a14c0a03118455bc607c06c2f81288a9d0dadd1c5e56dcf8cfca
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-framework.git"
+rev = "mainnet"
+subdir = "aptos-framework"
+
+[dev-dependencies]
