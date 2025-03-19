@@ -1,16 +1,25 @@
-[package]
-name = "BlockchaininHealthcareSupplyChain"
-version = "1.0.0"
-authors = []
+module Healthcare::SupplyChain {
 
-[addresses]
-Healthcare =
-0x66f01ad3d364a14c0a03118455bc607c06c2f81288a9d0dadd1c5e56dcf8cfca
-[dev-addresses]
+    use aptos_framework::signer;
+    use aptos_framework::coin;
+    use aptos_framework::aptos_coin::AptosCoin;
 
-[dependencies.AptosFramework]
-git = "https://github.com/aptos-labs/aptos-framework.git"
-rev = "mainnet"
-subdir = "aptos-framework"
+    struct MedicalSupply has store, key {
+        delivered: bool,
+        verified: bool,
+    }
 
-[dev-dependencies]
+    public fun create_supply(owner: &signer) {
+        let supply = MedicalSupply {
+            delivered: false,
+            verified: false,
+        };
+        move_to(owner, supply);
+    }
+
+    public fun update_supply_status(supply_owner: address, delivered: bool, verified: bool) acquires MedicalSupply {
+        let supply = borrow_global_mut<MedicalSupply>(supply_owner);
+        supply.delivered = delivered;
+        supply.verified = verified;
+    }
+}
