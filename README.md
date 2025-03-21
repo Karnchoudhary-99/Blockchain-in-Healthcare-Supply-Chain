@@ -1,6 +1,6 @@
 # Blockchain-in-Healthcare-Supply-Chain
 Track the delivery and authenticity of medical supplies in the healthcare system
-# Blockchain in Healthcare Supply Chain
+
 
 ## Project Description
 This project aims to enhance the healthcare supply chain by leveraging blockchain technology to track the delivery and authenticity of medical supplies. By using smart contracts, the system ensures transparency, security, and trust in the distribution process.
